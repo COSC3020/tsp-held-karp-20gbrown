@@ -47,3 +47,11 @@ Test your new function; I've provided some basic testing code in `code.test.js`.
 What is the worst-case asymptotic time complexity of your implementation? What
 is the worst-case asymptotic memory complexity? Add your answer, including your
 reasoning, to this markdown file.
+
+## Time complexity
+
+There are $2^n$ possible subets of cities, and for each subset, the algorithm explores each city in the given subset. Then, for each city, it calculates the minimum tour length. Therefore the time complexity is $O(n^2 2^n)$.
+
+## Memory complexity
+
+The memoization table stores the results for each combination of subsets and cities, leading to a space complexity of $O(n 2^n)$ . The memo table has $2^n$ rows and $n$ columns. 
