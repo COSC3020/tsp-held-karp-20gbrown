@@ -1,3 +1,4 @@
+[![Open in Visual Studio Code](https://classroom.github.com/assets/open-in-vscode-718a45dd9cf7e7f842a935f5ebbe5719a5e09af4491e668f4dbf3b35d5cca122.svg)](https://classroom.github.com/online_ide?assignment_repo_id=13162217&assignment_repo_type=AssignmentRepo)
 # Traveling Salesperson Problem -- Held-Karp Algorithm
 
 This exercise is about the Traveling Salesperson Problem I mentioned in the
@@ -46,3 +47,12 @@ Test your new function; I've provided some basic testing code in `code.test.js`.
 What is the worst-case asymptotic time complexity of your implementation? What
 is the worst-case asymptotic memory complexity? Add your answer, including your
 reasoning, to this markdown file.
+
+## Time complexity
+
+The worst-case asymptotic time complexity of my implementation is $O(n^2 2^n)$. The reason for this is the heldKarp function is called recursivly for each combination of cities. The reason for this is the 'heldKarp' function explores all subsets of cities and for each subset, it iterates through each city.This results in $2^n * n$ combinations. The memoization helps to avoid redundant calculations but the overall time complexity remains exponential. 
+
+## Memory complexity
+
+The memory complexity is also $O(n * 2^n)$. This is because the memoization table may store results for all possible combinations of cities, which is proportional to $2^n * n$. The memoization table's size is detirmined by the number of subets of cities. 
+
