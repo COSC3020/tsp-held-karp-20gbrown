@@ -50,12 +50,9 @@ reasoning, to this markdown file.
 
 ## Time complexity
 
-The worst-case asymptotic time complexity of my implementation is $O(n!)$. The reason for this is the heldKarp function is called recursivly for each combination of cities. So in worst case, it explores all permutations of cities, which is $n!$. The memoization using the 'memo' Map should help avoid redundant calculations but since the algorithm explores all possible permutations, the size of the memoization table can still be $n!$, contributing to the overall complexity. 
+The worst-case asymptotic time complexity of my implementation is $O(n^2 2^n)$. The reason for this is the heldKarp function is called recursivly for each combination of cities. The reason for this is the 'heldKarp' function explores all subsets of cities and for each subset, it iterates through each city.This results in $2^n * n$ combinations. The memoization helps to avoid redundant calculations but the overall time complexity remains exponential. 
 
 ## Memory complexity
 
-The memory complexity is also $O(n!)$. This is because the memoization table may store results for all possible combinations of cities, which is proportional to n!. 
+The memory complexity is also $O(n * 2^n)$. This is because the memoization table may store results for all possible combinations of cities, which is proportional to $2^n * n$. The memoization table's size is detirmined by the number of subets of cities. 
 
-## Note
-
-Upon further inspection I realize my time and memory complexity were way off, memo is one dimensional, and my implementation is very inefficent. 
