@@ -50,8 +50,12 @@ reasoning, to this markdown file.
 
 ## Time complexity
 
-There are $2^n$ possible subets of cities, and for each subset, the algorithm explores each city in the given subset. Then, for each city, including the start city, it calculates the minimum tour length using recursion and memoization. Therefore the time complexity is $O(n^2 * 2^n)$. Considering the memoization of the start city, the worst-case time complexity remains the same. The memoization does not change the overall structure of the time complexity. 
+The worst-case asymptotic time complexity of my implementation is $O(n!)$. The reason for this is the heldKarp function is called recursivly for each combination of cities. So in worst case, it explores all permutations of cities, which is $n!$. The memoization using the 'memo' Map should help avoid redundant calculations but since the algorithm explores all possible permutations, the size of the memoization table can still be $n!$, contributing to the overall complexity. 
 
 ## Memory complexity
 
-The memoization table stores the results for each combination of subsets and cities, leading to a space complexity of $O(n * 2^n)$ . The memo table has $2^n$ rows and $n$ columns. 
+The memory complexity is also $O(n!)$. This is because the memoization table may store results for all possible combinations of cities, which is proportional to n!. 
+
+## Note
+
+Upon further inspection I realize my time and memory complexity were way off, memo is one dimensional, and my implementation is very inefficent. 
